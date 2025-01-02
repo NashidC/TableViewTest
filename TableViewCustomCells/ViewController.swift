@@ -9,21 +9,25 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    
     @IBOutlet var tableView: UITableView!
     let myData = ["first", "second","Third","fourth"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView,delegate = self
+        tableView.delegate = self
         tableView.dataSource = self
     }
     //TableView Funcs
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myData.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = myData[indexPath.row]
+        return cell
     }
 }
 
