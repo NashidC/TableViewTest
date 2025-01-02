@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.myLabel.text = myData[indexPath.row]
         cell.myImageView.backgroundColor = .red
-        cell.textLabel?.text = myData[indexPath.row]
+        
         return cell
     }
 }
